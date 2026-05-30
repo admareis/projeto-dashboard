@@ -1,4 +1,30 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    background-color: gray;
+    text-align: center;
+    display: flex;
+    padding: 14px 24px;
+}
+
+section{
+    width: 150px;
+    background-color: rgba(128, 128, 128, 0.436);
+    gap: 20px;
+    display: grid;
+    flex-direction: column;
+}
+button{
+    padding: 10px;
+    margin: 5px;
+    gap: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+footer{
+    background-color: gray;
 }
