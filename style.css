@@ -3,20 +3,26 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    min-width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
 header{
     display: flex;
+    justify-content: center;  
+    align-items: center; 
     background-color: gray;
-    text-align: center;
-    display: flex;
-    padding: 14px 24px;
+    padding: 10px;
 }
-
 section{
     width: 150px;
-    background-color: rgba(128, 128, 128, 0.436);
-    gap: 20px;
-    display: grid;
-    flex-direction: column;
+    background-color: #8080806f;
+    gap: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;    
 }
 button{
     padding: 10px;
@@ -24,7 +30,30 @@ button{
     gap: 20px;
     border-radius: 5px;
     background-color: #fff;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #008b8b87;
 }
 footer{
     background-color: gray;
+    text-align: center;
+    padding: 10px;
+}
+.painel{
+    display: none;
+    padding: 10px;
+}
+.conteudo{    
+    display: flex;
+    flex: 1;
+}
+.boasVindas{    
+    background: white;
+    padding: 40px 60px;
+    text-align: center;
+}
+.areaPrincipal{
+    display: 1;
+    padding: 20px;
 }
