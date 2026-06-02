@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
-    <title>Document</title>
+    <title>Desafios</title>
 </head>
 <body>
     <header>
@@ -35,6 +35,15 @@
 
     <div id="d3" class="painel">
         <h2>Conversor de Temperatura</h2>
+        <p>Digite a temperatura em Celsius</p>
+        <input type="number" name="Digite a temperatura em Celsius" id="celsius" placeholder="ºC - utilize somente .(ponto)"> 
+        <br>
+        <p>Digite a temperatura em Fahrenheit</p>
+        <input type="number" name="Digite a tempetura em Fahrenheit" id="fahrenheit" placeholder="ºF - utilize somente .(ponto)">
+        <br>
+        <button onclick="calcularTemperatura()">Calcular</button>
+        <button onclick="reset()" >Limpar</button>
+        <p id="calculoTotal"></p>
     </div>
 
     <div id="d4" class="painel">
