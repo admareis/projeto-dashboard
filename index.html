@@ -31,23 +31,42 @@
 
     <div id="d2" class="painel">
         <h2>Cálculo de IMC por Gênero</h2>
+        <form action="">
+            <label for="peso">Digite o seu peso</label>
+            <input type="number" name="peso" id="peso">
+            <label for="altura">Digite a sua altura</label>
+            <input type="number" name="altura" id="altura">
+            <div>
+
+             
+            </div>
+        </form>
     </div>
 
     <div id="d3" class="painel">
         <h2>Conversor de Temperatura</h2>
         <p>Digite a temperatura em Celsius</p>
         <input type="number" name="Digite a temperatura em Celsius" id="celsius" placeholder="ºC - utilize somente .(ponto)"> 
-        <br>
         <p>Digite a temperatura em Fahrenheit</p>
         <input type="number" name="Digite a tempetura em Fahrenheit" id="fahrenheit" placeholder="ºF - utilize somente .(ponto)">
-        <br>
-        <button onclick="calcularTemperatura()">Calcular</button>
-        <button onclick="reset()" >Limpar</button>
-        <p id="calculoTotal"></p>
+        <div class="buttons">
+        <button onclick="calcularTemperatura()" class="calcular">Calcular</button>
+        <button onclick="reset3()" class="limpar">Limpar</button>
+        </div>
+        <span id="calculoTotal3"></span>        
     </div>
 
     <div id="d4" class="painel">
         <h2>Conversor de Velocidade</h2>
+        <p>Digite a Velocidade em Km/h</p>
+        <input type="number" name="Digite a Velocidade em Km/h" id="km" placeholder="Km/h"> 
+        <p>Digite a Velocidade em Mp/h</p>
+        <input type="number" name="Digite a Velocidade em Mp/h" id="mp" placeholder="Mp/h">
+        <div class="buttons">
+        <button onclick="converterVelocidade()" class="calcular">Calcular</button>
+        <button onclick="reset4()" class="limpar">Limpar</button>
+        </div>
+        <span id="calculoTotal4"></span>
     </div>
 
     <div id="d5" class="painel">

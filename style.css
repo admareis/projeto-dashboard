@@ -20,12 +20,12 @@ section{
     width: 150px;
     background-color: #8080806f;
     gap: 40px;
-    padding: 10px;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column; 
+    justify-content: center;   
 }
 button{
-    padding: 10px;
+    padding: 25px;
     margin: 5px;
     gap: 20px;
     border-radius: 5px;
@@ -33,7 +33,7 @@ button{
     cursor: pointer;
 }
 button:hover{
-    background-color: #008b8b87;
+    background-color: #008b8b4e;
 }
 footer{
     background-color: gray;
@@ -42,7 +42,11 @@ footer{
 }
 .painel{
     display: none;
-    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+    border: 5px dotted black;
+    padding: 40px;
+    gap: 20px;
 }
 .conteudo{    
     display: flex;
@@ -54,10 +58,43 @@ footer{
     text-align: center;
 }
 .areaPrincipal{
-    display: 1;
-    padding: 20px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
 }
-#id3{
+#d3{
+    flex-direction: column; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+#d3 button{
+    display: flex;
+    padding: 10px;    
+    border-radius: 20px;
+}
+#d4 button{
+    display: flex;
+    padding: 10px;    
+    border-radius: 20px;
+}
+.limpar{
+    background-color: #ffd90088;    
+}
+.calcular{
+    background-color: #00800079;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+form{
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 2px solid black;
 }
+
