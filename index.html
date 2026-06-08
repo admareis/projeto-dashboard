@@ -33,14 +33,23 @@
         <h2>Cálculo de IMC por Gênero</h2>
         <form action="">
             <label for="peso">Digite o seu peso</label>
-            <input type="number" name="peso" id="peso">
+            <input type="number" name="peso" id="peso" step="0.01" placeholder="Ex: 60.5">
             <label for="altura">Digite a sua altura</label>
-            <input type="number" name="altura" id="altura">
+            <input type="number" name="altura" id="altura" step="0.01" placeholder="Ex: 1.70">
             <div>
-
-             
+                <label for="genero">Selecione o seu Gênero:</label>
+                <select name="genero" id="genero">
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                </select>            
             </div>
+            <div class="buttons">
+        <button type="button" onclick="calcularIMC()" class="calcular">Calcular IMC</button>
+        <button type="button" onclick="reset2()" class="limpar">Limpar</button>
+        </div>
+        <span id="calculoTotal2"></span>
         </form>
+        
     </div>
 
     <div id="d3" class="painel">
