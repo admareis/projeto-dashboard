@@ -70,12 +70,27 @@ footer{
     justify-content: center;
     gap: 30px;
 }
+#d2 button{
+    display: flex;
+    padding: 10px;    
+    border-radius: 20px;
+}
 #d3 button{
     display: flex;
     padding: 10px;    
     border-radius: 20px;
 }
 #d4 button{
+    display: flex;
+    padding: 10px;    
+    border-radius: 20px;
+}
+#d5 button{
+    display: flex;
+    padding: 10px;    
+    border-radius: 20px;
+}
+#d6 button{
     display: flex;
     padding: 10px;    
     border-radius: 20px;
@@ -96,5 +111,11 @@ form{
     gap: 10px;
     padding: 20px;
     border: 2px solid black;
+}
+#d6 img{
+    width: 125px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
