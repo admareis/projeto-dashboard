@@ -25,8 +25,19 @@
 
     <div class="areaPrincipal">
 
-    <div id="d1" class="painel">
-        <h2>Conversor de moedas</h2>
+    <div id="d1" class="painel">        
+        <form action="">
+        <h2>Conversor de moedas (BRL<=>USD)</h2>
+        <label for="reais">Digite o valor em Reais</label>
+        <input type="number" name="reais" id="reais" > 
+        <label for="dolar">Digite o valor em Dólar</label>
+        <input type="number" name="dolar" id="dolar" >
+        <div class="buttons">
+        <button type="button" onclick="converterMoedas()" class="calcular">Calcular</button>
+        <button type="button" onclick="reset1()" class="limpar">Limpar</button>
+        </div>
+        <span id="calculoTotal1"></span>  
+        </form>
     </div>
 
     <div id="d2" class="painel">       
@@ -55,10 +66,10 @@
     <div id="d3" class="painel">
         <form action="">
         <h2>Conversor de Temperatura</h2>
-        <p>Digite a temperatura em Celsius</p>
-        <input type="number" name="Digite a temperatura em Celsius" id="celsius" placeholder="ºC - utilize somente .(ponto)"> 
-        <p>Digite a temperatura em Fahrenheit</p>
-        <input type="number" name="Digite a tempetura em Fahrenheit" id="fahrenheit" placeholder="ºF - utilize somente .(ponto)">
+        <label for="">Digite a temperatura em Celsius</label>
+        <input type="number" name="Digite a temperatura em Celsius" id="celsius" > 
+        <label for="">Digite a temperatura em Fahrenheit</label>
+        <input type="number" name="Digite a tempetura em Fahrenheit" id="fahrenheit">
         <div class="buttons">
         <button type="button" onclick="calcularTemperatura()" class="calcular">Calcular</button>
         <button type="button" onclick="reset3()" class="limpar">Limpar</button>
@@ -70,10 +81,10 @@
     <div id="d4" class="painel">
         <form action="">
         <h2>Conversor de Velocidade</h2>
-        <p>Digite a Velocidade em Km/h</p>
-        <input type="number" name="Digite a Velocidade em Km/h" id="km" placeholder="Km/h"> 
-        <p>Digite a Velocidade em Mp/h</p>
-        <input type="number" name="Digite a Velocidade em Mp/h" id="mp" placeholder="Mp/h">
+        <label for="">Digite a Velocidade em Quilômetros por hora(KM/h)</label>
+        <input type="number" name="Digite a Velocidade em Km/h" id="km"> 
+        <label for="">Digite a Velocidade em Milhas por hora (MP/h)</label>
+        <input type="number" name="Digite a Velocidade em Mp/h" id="mp">
         <div class="buttons">
         <button type="button" onclick="converterVelocidade()" class="calcular">Calcular</button>
         <button type="button" onclick="reset4()" class="limpar">Limpar</button>
@@ -85,10 +96,10 @@
     <div id="d5" class="painel">
         <form action="">
         <h2>Conversor de Massa</h2>
-        <p>Digite o valor da Massa em Quilograma:</p>
-        <input type="number" name="Digite o valor da Massa em Quilograma" id="kg" placeholder="Kg"> 
-        <p>Digite o valor da Massa em Libras</p>
-        <input type="number" name="Digite o valor da Massa em Libras" id="lb" placeholder="Lb">
+        <label for="">Digite o valor da Massa em Quilograma (kg):</label>
+        <input type="number" name="Digite o valor da Massa em Quilograma" id="kg"> 
+        <label for="">Digite o valor da Massa em Libras (lb)</label>
+        <input type="number" name="Digite o valor da Massa em Libras" id="lb">
         <div class="buttons">
         <button type="button" onclick="converterMassa()" class="calcular">Calcular</button>
         <button type="button" onclick="reset5()" class="limpar">Limpar</button>
@@ -108,13 +119,13 @@
         <input type="number" name="campoB" id="campoB" placeholder="B">
         <label for="campoC">Digite o valor C</label>
         <input type="number" name="campoC" id="campoC" placeholder="C">
-        <label for="campoD">Este é resultado de X</label>
-        <input type="text" name="campoX" id="campoX" placeholder="Resultado total">
+        <label for="campoD">Este é resultado total de X:</label>
+        <input type="text" id="campoX">
+        <p id="erro"></p>
         <div class="buttons">
         <button type="button" onclick="CalcRegra3()" class="calcular">Calcular</button>
         <button type="button" onclick="reset6()" class="limpar">Limpar</button>
         </div>
-    
     
     
     </form>

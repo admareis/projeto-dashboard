@@ -2,6 +2,50 @@ function mostrarDesafio(id) {
   document.querySelectorAll('.painel').forEach(p => p.style.display = 'none'); // foreach percorre todo os elementos que receberam a classe painel e esconde todas divs da area principal //
   document.getElementById(id).style.display = 'block'; // chama somente a div que for clicada // 
 }
+////////// CONVERSOR DE MOEDAS ////////////////
+async function converterMoedas(){
+    const url = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
+    const data = await fetch (url); // espera a API responder //
+    const dataJson = await data.json(); // transforma em json //
+    const cotacaoAtual = Number(dataJson.USDBRL.bid);
+    const reais = Number(document.getElementById("reais").value.trim());
+    const dolar = Number(document.getElementById("dolar").value.trim());
+    const resultado = document.getElementById("calculoTotal1");
+
+    if (reais>0) {
+        const total = reais / cotacaoAtual; // de reais para dólar //
+        resultado.textContent = `R$ ${reais.toFixed(2)} = US$ ${total.toFixed(2)}`;
+    } 
+    else if (dolar>0) { // de dólar para reais // 
+        const total = dolar * cotacaoAtual;
+        resultado.textContent = `US$ ${dolar.toFixed(2)} = R$ ${total.toFixed(2)}`;
+    } 
+    else {
+        resultado.textContent = "Digite um valor em Reais ou em Dólar.";
+    }
+};
+//// fuunção para bloquear o outro campo ////////
+let inputReais = document.getElementById('reais');
+let inputDolar = document.getElementById('dolar');
+
+inputReais.addEventListener("input", function () {
+    inputDolar.disabled = inputReais.value !== "";
+});
+
+inputDolar.addEventListener("input", function () {
+    inputReais.disabled = inputDolar.value !== "";
+});
+function reset1() {
+    document.getElementById('reais').value = "";
+    document.getElementById('dolar').value = "";
+    inputReais.value = "";
+    inputDolar.value = "";
+    inputReais.disabled = false;  
+    inputDolar.disabled = false;
+    document.getElementById('calculoTotal1').textContent = "";
+}
+////////// FIM CONVERSOR DE MOEDAS ////////////
+
 
 ////////////// IMC /////////////////
 function classificarIMC(imc, genero) {
@@ -47,7 +91,7 @@ function calcularIMC(){
     else {
     resultado.textContent = `Seu IMC é ${calcIMC.toFixed(2)} - ${classificacao}`;
     resultado.style.color = coresIMC[classificacao];
-}}
+}};
 function reset2() {
     document.getElementById('peso').value = "";
     document.getElementById('altura').value = "";
@@ -72,10 +116,25 @@ function calcularTemperatura(){
     else{ 
         resultado.innerText = "Digite um valor em algum dos campos."
     }  
-}
+};
+//// fuunção para bloquear o outro campo ////////
+inputCelsius = document.getElementById('celsius');
+inputFahrenheit = document.getElementById('fahrenheit');
+
+inputCelsius.addEventListener("input", function () {    
+    inputFahrenheit.disabled = inputCelsius.value !== "";
+});
+
+inputFahrenheit.addEventListener("input", function () {
+    inputCelsius.disabled = inputFahrenheit.value !== "";
+});
 function reset3() {
     document.getElementById("celsius").value = "";
     document.getElementById("fahrenheit").value = "";
+    inputCelsius.value = "";
+    inputFahrenheit.value = "";
+    inputCelsius.disabled = false;  
+    inputFahrenheit.disabled = false;
     document.getElementById("calculoTotal3").textContent = "";
 }
 ///////////////// TÉRMINO TEMPERATURA ///////////////// 
@@ -97,10 +156,26 @@ function converterVelocidade(){
     else {
         resultado.innerText = "Digite um valor em algum dos campos."
     }
-}  
+};
+//// fuunção para bloquear o outro campo ////////
+let inputKm = document.getElementById('km');
+let inputMp = document.getElementById('mp');
+
+inputKm.addEventListener("input", function () {
+    inputMp.disabled = inputKm.value !== "";
+});
+
+inputMp.addEventListener("input", function () {
+    inputKm.disabled = inputMp.value !== "";
+});
+
 function reset4() {
     document.getElementById("km").value = "";
     document.getElementById("mp").value = "";
+    inputKm.value = "";
+    inputMp.value = "";
+    inputKm.disabled = false;  
+    inputMp.disabled = false;
     document.getElementById("calculoTotal4").textContent = "";
 } 
 ////////////// TÉRMINO VELOCIDADE ///////////////////
@@ -123,20 +198,55 @@ function converterMassa(){
         resultado.innerText = "Digite um valor em algum dos campos."
     }  
 }
+//// fuunção para bloquear o outro campo ////////
+let inputKg = document.getElementById('kg');
+let inputLb = document.getElementById('lb');
+
+inputKg.addEventListener("input", function () {
+    inputLb.disabled = inputKg.value !== "";
+});
+
+inputLb.addEventListener("input", function () {
+    inputKg.disabled = inputLb.value !== "";
+});
+
 function reset5() {
     document.getElementById("kg").value = "";
     document.getElementById("lb").value = "";
+    inputKg.value = "";
+    inputLb.value = "";
+    inputKg.disabled = false;  
+    inputLb.disabled = false;
     document.getElementById("calculoTotal5").textContent = "";
 }
 ////////// TÉRMINO CALC MASSA ////////////////////
 
-/////////// REGRA DE TRÊS ////////////////////
 
+/////////// REGRA DE TRÊS ////////////////////
 function CalcRegra3(){
     const campoA = Number(document.getElementById('campoA').value.trim());
     const campoB = Number(document.getElementById('campoB').value.trim());
     const campoC = Number(document.getElementById('campoC').value.trim());
     const resultado = document.getElementById('campoX');
-    const calc = (campoB*campoC)/campoA
+    const calc = (campoB*campoC)/campoA;
+    const mensagemErro = document.getElementById ('erro');
 
+    if(campoA<=0 || campoB <=0 || campoC <=0){
+        mensagemErro.textContent = "Preencha todos os campos";
+        mensagemErro.style.color = "#ef4444"
+    }
+    else if (campoA ==0 || campoB ==0 || campoC ==0){
+        mensagemErro.textContent = "Não pode haver divisão por zero. Por gentileza, verifique e tente novamente"
+    }
+    else{
+        resultado.value = calc.toFixed(2);
+    }
 }
+function reset6() {
+    document.getElementById("campoA").value = "";
+    document.getElementById("campoB").value = "";
+    document.getElementById("campoC").value = "";
+    document.getElementById("campoX").value = "";
+    document.getElementById("erro").textContent ="";
+}
+//////////// FIM REGRA DE TRÊS ///////////////

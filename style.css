@@ -19,13 +19,13 @@ header{
 section{
     width: 150px;
     background-color: #8080806f;
-    gap: 40px;
+    gap: 25px;
     display: flex;
     flex-direction: column; 
     justify-content: center;   
 }
 button{
-    padding: 25px;
+    padding: 20px;
     margin: 5px;
     gap: 20px;
     border-radius: 5px;
@@ -69,6 +69,11 @@ footer{
     align-items: center;
     justify-content: center;
     gap: 30px;
+}
+#d1 button{
+    display: flex;
+    padding: 10px;    
+    border-radius: 20px;
 }
 #d2 button{
     display: flex;
