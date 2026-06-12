@@ -4,8 +4,13 @@ function mostrarDesafio(id) {
 }
 ////////// CONVERSOR DE MOEDAS ////////////////
 async function converterMoedas(){
+    try{        
     const url = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
     const data = await fetch (url); // espera a API responder //
+
+    if (!data.ok) 
+    throw new Error("Falha na resposta da API");    
+
     const dataJson = await data.json(); // transforma em json //
     const cotacaoAtual = Number(dataJson.USDBRL.bid);
     const reais = Number(document.getElementById("reais").value.trim());
@@ -22,6 +27,11 @@ async function converterMoedas(){
     } 
     else {
         resultado.textContent = "Digite um valor em Reais ou em Dólar.";
+    }
+}
+catch (error){
+    document.getElementById("calculoTotal1").textContent = "Erro ao buscar cotação. Verifique sua conexão.";
+    console.error("Erro na API:", erro);
     }
 };
 //// fuunção para bloquear o outro campo ////////
